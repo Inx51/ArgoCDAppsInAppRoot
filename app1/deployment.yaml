@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: app1
+  name: bb-app1
   namespace: argocd
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: busybox1
+      app: bb-app1
   template:
     metadata:
       labels:
-        app: busybox1
+        app: bb-app1
     spec:
       containers:
-      - name: busybox1
+      - name: bb-app1
         image: busybox
         command: ["sh", "-c", "while true; do sleep 100000; done"]
