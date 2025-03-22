@@ -1,15 +1,20 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: apps-in-app
+  name: rootapp
   namespace: argocd
   labels:
-    name: apps-in-app
+    name: rootapp
 spec:
-  project: argocd-apps-in-app-demo
+  project:  apps-in-app-project
   source:
-    repoURL: https://github.com/Inx51/ArgoCDAppsInAppRoot.git
+    repoURL: https://github.com/Inx51/ArgoCDAppsInAppRoot
+    path: apps
     targetRevision: HEAD
-    path: /apps
   destination:
+    server: https://kubernetes.default.svc
     namespace: argocd
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

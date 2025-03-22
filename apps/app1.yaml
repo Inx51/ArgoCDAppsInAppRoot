@@ -1,12 +1,12 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: app1
+  name: x-app1
   namespace: argocd
   labels:
-    name: app1
+    name: x-app1
 spec:
-  project: argocd-apps-in-app-demo
+  project: apps-in-app-project
   source:
     repoURL: https://github.com/Inx51/ArgoCDAppsInAppRoot.git
     targetRevision: HEAD
