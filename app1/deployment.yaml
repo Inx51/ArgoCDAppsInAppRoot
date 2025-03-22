@@ -16,4 +16,4 @@ spec:
       containers:
       - name: bb-app1
         image: busybox
-        command: ["sh", "-c", "while true; do sleep 100000; done"]
+        command: ["sh", "-c", "while true; do sleep 35000; done"]
