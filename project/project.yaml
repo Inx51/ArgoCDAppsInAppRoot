@@ -1,0 +1,12 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: apps-in-app-project
+  namespace: argocd
+spec:
+  description: "Default project for ArgoCD"
+  destinations:
+    - namespace: '*'
+      server: '*'
+  sourceRepos:
+    - '*'

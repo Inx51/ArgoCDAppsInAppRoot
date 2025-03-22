@@ -1,0 +1,15 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: apps-in-app
+  namespace: argocd
+  labels:
+    name: apps-in-app
+spec:
+  project: argocd-apps-in-app-demo
+  source:
+    repoURL: https://github.com/Inx51/ArgoCDAppsInAppRoot.git
+    targetRevision: HEAD
+    path: /apps
+  destination:
+    namespace: argocd-apps-in-app-demo
