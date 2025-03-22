@@ -12,4 +12,5 @@ spec:
     targetRevision: HEAD
     path: /app1
   destination:
+    server: https://kubernetes.default.svc
     namespace: argocd
